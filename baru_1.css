@@ -1,0 +1,182 @@
+body {
+    background-color: #f5f5f5;
+    height: 101vh;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+    "nav nav"
+    "side main";
+}
+
+.nav {
+    background-color: #332939;
+    grid-area: nav;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+nav a {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
+}
+/*-----------------------------------*/
+
+#toggle {
+    display: none;
+}
+
+.side-toggle {
+    position: absolute;
+    
+    z-index: 2;
+    top: 20px;
+    left: 25;
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#toggle:checked ~ .sidebar {
+    width: 80px;
+}
+#toggle:checked ~ .sidebar h1 {
+    display: none;
+}
+
+#toggle:checked ~ .sidebar .sidebar-menu > p {
+    display: none;
+}
+#toggle:checked ~ .sidebar .sidebar-M {
+    margin: 79px 0 0 3px;
+}
+#toggle:checked ~ .sidebar .sidebar-menu {
+    width: 25%;
+    border-radius: 10%;
+}
+#toggle:checked ~ .sidebar .sidebar-menu:hover {
+    margin-left: 5px;
+}
+#toggle:checked ~ .sidebar .sidebar-menu > span {
+    margin-left: -3px;
+}
+
+/* --------------------------------- */
+
+.sidebar {
+    height: 100%;
+    background-color: #5a4b65;
+    grid-area: side;
+}
+
+.sidebar-menu {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    width: 78%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 30px;
+}
+
+.sidebar-menu:hover {
+    color: #2d2b98;
+    background-color: #f8f8fb;
+}
+.sidebar-menu > span {
+    font-size: 25px;
+    padding-right: 30px;
+}
+/* --------------------------------- */
+
+.main {
+    grid-area: main;
+    padding: 20px 30px;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px;
+
+    grid-template-areas: 
+    "card_1 card_1 card2 card2"
+    "card_1 card_1 card2 card2"
+    "card3 card4 card5 card6";
+}
+
+.main img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 40%;
+}
+
+.main img:hover {
+    transform: scale(1.1);
+}
+
+.card_1 {
+    background-color: #fff;
+    border-radius: 50px;
+    grid-area: card_1;
+}
+
+.card2 {
+    background-color: #fff;
+    border-radius: 50px;
+    grid-area: card2;
+}
+
+.card3 {
+    background-color: #fff;
+    border-radius: 50px;
+    grid-area: card3;
+}
+
+.card4 {
+    background-color: #fff;
+    border-radius: 50px;
+    grid-area: card4;
+}
+
+.card5 {
+    background-color: #fff;
+    border-radius: 50px;
+    grid-area: card5;
+}
+.card6 {
+    background-color: #fff;
+    border-radius: 50px;
+    grid-area: card6;
+}
+
+.card_1 img, .card2 img {
+    margin: 15px;
+    width: 400;
+}
+
+.card3 img, .card4 img, .card5 img, .card6 img {
+    margin: 15px;
+    width: 180px;
+}

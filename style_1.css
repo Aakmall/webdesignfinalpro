@@ -1,0 +1,294 @@
+
+body {
+    background-color: #ddddeb;
+}
+h2 {
+    font: 18px;
+    padding: 15px 0;
+}
+
+h2 > span {
+    font-size: 14px;
+}
+
+/* =============================================== */
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* =============================================== */
+
+/* nav ============================================== NAV */
+
+/* navbar */
+
+.nav {
+    background-color: #ffffff;
+    position: fixed;
+    grid-area: nav;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    padding-right: 20px;
+    z-index: 2;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+nav a {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #313140;
+    padding-right: 5px;
+}
+nav a:hover {
+    color: #8e8e9c;
+}
+
+
+
+/* nav =============================================== NAV */
+
+
+/* Sidebar =========================================== SIDE */
+/* dari baris langsung jadi kolom */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    left: 0;
+    top: 0;
+    padding: 80px 0 20px 0;
+    color: #fff;
+    background-color: #676789;
+    box-shadow: 2px 0 5px rgba(8, 8, 8, 0.5);
+
+}
+/*  */
+.sidebar-menu {
+    display: flex;
+    align-items: center;
+    padding: 20px 45px 20px 20px;
+    width: 65%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 30px;
+
+    margin: 20px 0;
+}
+.sidebar-menu:hover {
+    color: #2d2b98;
+    background-color: #f8f8fb;
+}
+.sidebar-menu > span {
+    font-size: 25px;
+    padding-right: 30px;
+}
+/* Sidebar =========================================== SIDE */
+
+/* Main ==============================================   Main   */
+.main {
+    grid-area: main;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+
+    grid-template-areas: 
+    "card_1 card_1 card2 card2"
+    "card_1 card_1 card2 card2"
+    "card3 card4 card5 card6";
+
+    min-height: 100%;
+    padding: 10px 0px 20px 60px;;
+    color: #201f2b;
+}
+
+/* card */
+.card_1 {
+    background-color: #fff;
+    border-radius: 20px;
+    grid-area: card_1;
+}
+
+.card2 {
+    background-color: white;
+    grid-area: card2;
+    border-radius: 20px;
+}
+
+.card3 {
+    background-color: #fff;
+    border-radius: 20px;
+    grid-area: card3;
+}
+
+.card4 {
+    background-color: #fff;
+    border-radius: 20px;
+    grid-area: card4;
+}
+
+.card5 {
+    background-color: #fff;
+    border-radius: 20px;
+    grid-area: card5;
+}
+.card6 {
+    background-color: #fff;
+    border-radius: 20px;
+    grid-area: card6;
+}
+
+
+
+.card3 img, .card4 img, .card5 img{
+    margin: 5px;
+    width: 50%;
+    margin: 20px 15px 15px 15px;
+}
+.card6 img  {
+    margin: 20px 15px 15px 15px;
+    height: 200px;
+}
+.card_1 img {
+    margin: 40px 15px 15px 15px;
+    height: 405px;
+}
+.card2 img {
+    margin: 40px 20px 20px 20px;
+    width: 50%;
+}
+.main img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 80%;
+}
+.main img:hover {
+    transform: scale(1.1);
+}
+/* Main ==============================================   Main   */
+
+/* TOGGLE ============================================        TOGGLE */
+
+#toggle:checked ~ .sidebar h1,
+#toggle:checked ~ .sidebar .sidebar-menu > p {
+    display: none;
+}
+#toggle:checked ~ .sidebar  {
+    padding-top: 131px;
+    width: 75px;
+}
+#toggle:checked ~ .sidebar .sidebar-menu {
+    width: 3%;
+    border-radius: 10%;
+
+}
+#toggle:checked ~ .sidebar .sidebar-menu:hover {
+    margin-left: 3px;
+}
+#toggle:checked ~ .sidebar .sidebar-menu > span {
+    margin-left: -3px;
+}
+
+/*  */
+#toggle {
+    display: none;
+}
+.side-toggle {
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+    float: left;
+    font-size: 25px;
+    cursor: pointer;
+}
+/*  */
+#toggle:checked ~ main {
+    padding: 20px 40px 20px 0px;
+}
+/* TOGGLE ============================================        TOGGLE*/
+
+
+/* ================================================================ */
+
+@media screen and (max-width: 750px) {
+    body {
+        font-size: 13px;
+    }
+    .main {
+        grid-area: main;
+        text-align: center;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr ;
+        gap: 15px;
+    
+        grid-template-areas: 
+        "card_1 card2"
+        "card3 card4"
+        "card5 card6";
+    
+        min-height: 100%;
+        padding: 0px 10px 20px 80px;;
+        color: #201f2b;
+    }
+    .card_1 img {
+        height: 155px;
+    }
+    .card6 img {
+        height: 155px;
+    } 
+}
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
+    .sidebar {
+        display: none; 
+    }
+    .main {
+        grid-area: main;
+        text-align: center;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 15px;
+    
+        grid-template-areas: 
+        "card_1 "
+        "card2 "
+        "card3 "
+        "card4 "
+        "card5 "
+        "card6 ";
+    
+        min-height: 100%;
+        padding: 0px 10px 20px 0px;;
+        color: #201f2b;
+    }
+    .card_1 img {
+        height: 330px;
+    }
+    .card6 img {
+        height: 330px;
+    }
+    
+}
